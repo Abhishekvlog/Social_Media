@@ -7,10 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import com.dexter.socialmedia.R
-import com.dexter.socialmedia.View.fragmnet.AddFragment
-import com.dexter.socialmedia.View.fragmnet.HomeFragment
-import com.dexter.socialmedia.View.fragmnet.ProfileFragment
-import com.dexter.socialmedia.View.fragmnet.SearchFragment
+import com.dexter.socialmedia.View.fragmnet.*
 import com.dexter.socialmedia.databinding.ActivityProfileBinding
 import com.dexter.socialmedia.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -43,6 +40,7 @@ class ProfileActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
         val addFragment = AddFragment()
         val searchFragment = SearchFragment()
+        val likeFragment = LikeFragment()
         val profileFragment = ProfileFragment()
 
         makeCurrentFragment(homeFragment)
@@ -51,6 +49,7 @@ class ProfileActivity : AppCompatActivity() {
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
                 R.id.ic_Post -> makeCurrentFragment(addFragment)
                 R.id.ic_search -> makeCurrentFragment(searchFragment)
+                R.id.ic_like -> makeCurrentFragment(likeFragment)
                 R.id.ic_profile -> makeCurrentFragment(profileFragment)
             }
             true
@@ -66,7 +65,7 @@ class ProfileActivity : AppCompatActivity() {
         if (firebaseUser != null) {
             // user is present
             val email = firebaseUser.email
-//            binding.showEmail.text = email
+
 
 
         } else {

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SocialMedia">
         <activity
+            android:name=".View.EditProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".View.ProfileActivity"
             android:exported="true" />
         <activity

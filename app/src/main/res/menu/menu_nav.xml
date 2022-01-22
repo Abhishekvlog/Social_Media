@@ -14,8 +14,13 @@
         android:icon="@drawable/add"
         android:title="Post"/>
     <item
+        android:id="@+id/ic_like"
+        android:icon="@drawable/like"
+        android:title="like"/>
+    <item
         android:id="@+id/ic_profile"
         android:icon="@drawable/profile"
         android:title="Profile"/>
+
 
 </menu>
