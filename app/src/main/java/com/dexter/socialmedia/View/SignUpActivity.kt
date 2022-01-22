@@ -7,13 +7,13 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import com.dexter.socialmedia.databinding.ActivitySignUpBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -28,6 +28,8 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var fireBaseAuth : FirebaseAuth
     private  var email = ""
     private var password = ""
+    private var fullname = ""
+    private var username = ""
 
     private lateinit var googleSignInClient: GoogleSignInClient
 
@@ -66,6 +68,8 @@ class SignUpActivity : AppCompatActivity() {
     private fun validdateData() {
         email = binding.signMailId.text.toString().trim()
         password = binding.signPassword.text.toString().trim()
+        username = binding.signUseranme.text.toString().trim()
+        fullname = binding.signFullName.text.toString().trim()
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             // invalid
@@ -94,8 +98,12 @@ class SignUpActivity : AppCompatActivity() {
 
                 // get user information
                 val fireBaseUser = fireBaseAuth.currentUser
-                val email = fireBaseUser!!.email
-                Toast.makeText(this, "create account as $email ", Toast.LENGTH_SHORT).show()
+                val Email = fireBaseUser!!.email
+
+
+                createInformation(email, fullname, username )
+
+                Toast.makeText(this, "create account as $Email ", Toast.LENGTH_SHORT).show()
 
                 // open profile
                 startActivity(Intent(this, ProfileActivity::class.java))
@@ -107,6 +115,29 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "Login failed due to ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+    private fun createInformation(email: String, fullname: String, username: String) {
+        val currUserId = FirebaseAuth.getInstance().currentUser!!.uid
+        val userRef  :DatabaseReference = FirebaseDatabase.getInstance().reference.child("users")
+        val userMap = HashMap<String,Any>()
+        userMap["userid"] = currUserId
+        userMap["email"] = email
+        userMap["fullname"] = fullname
+        userMap["username"] = username
+        userMap["bio"] = "hey i am using social media...."
+        userMap["iamge"] = "https://firebasestorage.googleapis.com/v0/b/social-signup-7fa16.appspot.com/o/default%20Image%2Fprofile.xml?alt=media&token=a1611a44-1bde-4949-8072-275f97136746"
+
+        userRef.child(currUserId).setValue(userMap)
+            .addOnCompleteListener {task ->
+                if (task.isSuccessful){
+                    progressDailog.dismiss()
+                }
+                else{
+                    FirebaseAuth.getInstance().signOut()
+                    progressDailog.dismiss()
+                }
+            }
+     }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed() // go back to previous activity

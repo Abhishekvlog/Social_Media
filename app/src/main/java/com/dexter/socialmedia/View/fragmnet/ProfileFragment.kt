@@ -1,9 +1,11 @@
 package com.dexter.socialmedia.View.fragmnet
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import com.dexter.socialmedia.R
+import com.dexter.socialmedia.View.EditProfileActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -21,6 +23,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         fireBaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
+        btn_Edit.setOnClickListener {
+            startActivity(Intent(context,EditProfileActivity::class.java))
+
+        }
+
 //        button_signOut.setOnClickListener {
 //
 //        }
@@ -36,6 +43,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             // user is present
             val email = firebaseUser.email
             emailShow.text = email
+
 
 
         }
