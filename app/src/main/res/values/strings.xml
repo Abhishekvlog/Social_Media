@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Social Media</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="password">password</string>
+    <string name="or">or</string>
+    <string name="continue_with">continue_with</string>
+    <string name="login">Login</string>
 </resources>

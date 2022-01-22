@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/ic_google.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/line.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/rectangle_green.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/drawable/rectangle_light_blue.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_main.xml" value="0.17481884057971014" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_main2.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_profile.xml" value="0.21603260869565216" />
+        <entry key="..\:/Users/Abhishek/AndroidStudioProjects/SocialMedia/app/src/main/res/layout/activity_sign_up.xml" value="0.21603260869565216" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

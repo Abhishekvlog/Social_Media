@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "300074368467",
+    "project_id": "social-signup-7fa16",
+    "storage_bucket": "social-signup-7fa16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300074368467:android:39069d0f6586e7b35a4326",
+        "android_client_info": {
+          "package_name": "com.dexter.socialmedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300074368467-s28s56mtnra6875bnhjip62u88qhlb2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDobxJlAlhclcn7vC61jJrnimGJwFiuWXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300074368467-s28s56mtnra6875bnhjip62u88qhlb2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
