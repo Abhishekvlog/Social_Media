@@ -9,9 +9,14 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.dexter.socialmedia.databinding.ActivitySignUpBinding
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpActivity : AppCompatActivity() {
+
 
     // viewBinding
     private lateinit var binding : ActivitySignUpBinding
@@ -23,6 +28,8 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var fireBaseAuth : FirebaseAuth
     private  var email = ""
     private var password = ""
+
+    private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +49,17 @@ class SignUpActivity : AppCompatActivity() {
         binding.btnEmailSign.setOnClickListener {
             // valid data
             validdateData()
+        }
+        binding.ivGoogleLogin.setOnClickListener {
+            val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build()
+            googleSignInClient = GoogleSignIn.getClient(this, gso)
+            //Sign In
+            val signInIntent = googleSignInClient.signInIntent
+            startActivityForResult(signInIntent, Companion.RC_SIGN_IN)
+
+//            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 
@@ -94,5 +112,9 @@ class SignUpActivity : AppCompatActivity() {
         onBackPressed() // go back to previous activity
 
         return super.onSupportNavigateUp()
+    }
+
+    companion object {
+        private const val RC_SIGN_IN = 100
     }
 }
