@@ -10,6 +10,10 @@ import com.dexter.socialmedia.R
 import com.dexter.socialmedia.View.PostModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 
 class PostAdapter(
@@ -28,6 +32,7 @@ class PostAdapter(
         val post = list[position]
         Picasso.get().load(post.getPostImage()).into(holder.Post_Image)
         publisherInfo(holder.Post_Image , holder.Profile_Name, holder.publicsher, post.getPublisher())
+
     }
 
     private fun publisherInfo(
@@ -36,6 +41,19 @@ class PostAdapter(
         publicsher: TextView,
         publisher: String
     ) {
+        val userref = FirebaseDatabase.getInstance().reference.child("users").child(publisher)
+        userref.addValueEventListener(object  : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()){
+//                    val user = snapshot.getValue<>()
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+
+            }
+        })
 
     }
 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2d6881"
+    tools:context=".View.infoFragment.InfoFragment1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to social "
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/welcome"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How to use Social Application"
+        android:textSize="18dp"
+        android:id="@+id/howtouse"
+        android:textColor="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:id="@+id/step_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 1 : "
+        android:layout_below="@+id/howtouse"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First you need to enter your credentials\nif you are new user you need to enter your credentials like Name\nuserName\nEmail\nPassword\n After enter the details you directly land to the main page/n Where you can see four different screen \nHome\nSearch\nNotifications\nProfile"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:layout_below="@id/step_1"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"/>
+
+    <TextView
+        android:id="@+id/step_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step 2 : "
+        android:layout_below="@+id/detail"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/detail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="In home page you can see the all feed of which people you are follow, you can also like and comment of there feed\nIn Search page you can see a search bar at the top here you can search your friend\nIn Notification page you can see all the notifications like whose person like your post and comment\nIn Profile page user can see there details like name\nemail\nUserName\nBio\nand user can also edit them and user can see there feed in profile page "
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:layout_below="@id/step_2"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/detail2"
+        android:layout_margin="15dp"
+        android:textSize="18dp"
+        android:id="@+id/nextBnt"/>
+
+    </RelativeLayout>
+
+</ScrollView>
